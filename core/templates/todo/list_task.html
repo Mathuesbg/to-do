@@ -1,0 +1,49 @@
+{% extends "global/base.html" %}
+
+{% block content %}
+
+    <h1 class="task-list-header">Tasks</h1>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th class="table-cel tbl-hd">Task</th>
+                    <th class="table-cel tbl-hd">Status</th>
+                    <th class="table-cel tbl-hd">Created at</th>
+                    <th class="table-cel tbl-hd">Fineshed at</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for task in tasks %}
+                    <tr>
+                        <td class="table-cel">
+                            <a href="{% url "todo:detail" task.id %}">{{task.title}}</a>
+                        </td>
+                        <td class="table-cel">
+                            {{task.status}} 
+                            
+                        </td>                   
+                        <td class="table-cel">
+                            {{task.created_at}}
+                        </td>
+                        <td class="table-cel">
+                            {% if task.finished_at %}
+                                {{task.finished_at}}
+                            {% else %}
+                                In progress
+                            {% endif %}
+                        </td>
+                        <form action=""></form>
+                        <td>
+                            {% if task.status == "pending" %}
+                                <a class="button-status" href="{% url "todo:status" task.id %}">&#10004;</a>
+                            {% endif %}
+                            <a class="button-status" href="{% url "todo:delete" task.id %}">&#10008;</a>
+                        </td>
+
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    <div>   
+{% endblock content %}

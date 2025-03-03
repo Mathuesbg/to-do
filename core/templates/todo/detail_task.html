@@ -1,0 +1,28 @@
+{% extends "global/base.html" %}
+
+{% block content %}
+    <div class="main-container">
+        <h1 class="task-list-header">{{task.title}}</h1>
+        <div class="details-container">
+            <div class="detail-field"> Description:
+                <p>{{task.description}}</p>
+            </div>
+            <div class="detail-field"> Status:
+                <p>{{task.status}}</p>
+            </div>
+            <div class="detail-field"> Create at:
+                <p>{{task.created_at}}</p>
+            </div>
+            <div class="detail-field"> Finished at:
+                {% if task.finished_at %}
+                    <p>{{task.finished_at}}</p>
+                {% else %}
+                    <p>In progress</p>
+                {% endif %}
+            </div>
+            <div class="button-update-container">
+                <a class="update-link" href="{% url "todo:update" task.id %}">Update</a>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
