@@ -1,0 +1,219 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background: rgb(194, 220, 248);
+}
+
+.message {
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 30px;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 20px;
+    color: rgb(0, 78, 0);
+  }
+  
+.message.success {
+    background: rgba(0, 255, 0, 0.3);
+    border: 2px solid rgba(0, 255, 0, 90%);
+}
+  
+.message.error {
+    background: rgba(255, 0, 0, 0.3);
+    border: 1px solid rgba(255, 0, 0, 90%);
+}
+  
+.message.warning {
+    background: rgba(255, 255, 0, 0.3);
+    border: 1px solid rgba(255, 255, 0, 90%);
+}
+
+.message.info {
+    background: rgba(0, 0, 255, 0.3);
+    border: 1px solid rgba(0, 0, 255, 0.3);
+}
+  
+.list-container {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 100px;
+    background: rgb(94, 93, 93);
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.3);
+}
+
+.nav-item {
+    list-style-type: none;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.nav-item:hover {
+    background: rgb(63, 62, 62);
+    border: 2px solid rgb(39, 38, 38);
+
+}
+
+.nav-link {
+    color: whitesmoke;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.form-container {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    margin-top: 30px;
+
+}
+
+.field-container {
+    border-radius: 10px;
+    background-color: rgb(231, 231, 255);
+    box-shadow: 3px 3px 3px 2px rgba(0, 0, 0, 0.3);
+    width: 80%;
+    text-align: center;
+
+}
+
+.input-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 15px;
+    width: 100%;
+
+}
+
+.label-input {
+    font-weight: bold; /* Deixa o texto em negrito */
+    font-size: 20px;
+    color: #333; /* Cor do texto */
+    display: inline-block; /* Faz com que o label fique em uma linha separada */
+    margin-right: 18px;
+    width: 40px;
+    text-align: center;
+    color: rgb(0, 0, 65);
+
+}
+.text-area-field, .text-field {
+    background : rgb(250, 248, 255);
+    border-radius: 5px;
+    width: 70%;
+    min-width: 70%;
+    max-width: 70%;
+    border: 2px solid rgb(185, 186, 207);
+    outline: none;
+    padding: 10px;
+    font-size: 17px;
+    color: rgb(0, 0, 65);
+}
+
+.submit-button {
+    padding: 15px 30px;
+    font-size: 25px;
+    border-radius: 5px;
+    border: 2px solid rgb(47, 55, 160);
+    background : rgb(183, 176, 201);
+    color: rgb(0, 0, 65);
+    font-weight: bold; /* Deixa o texto em negrito */
+    cursor: pointer;
+    margin: 10px 10px 20px 10px;
+}
+
+
+.task-list-header {
+    color: rgb(128, 148, 236);
+    font-size: 50px;
+    text-align: center;
+    padding: 20px;
+    margin: 20px;
+    -webkit-text-stroke: 1px rgb(0, 5, 82);
+}
+
+.table-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+table {
+    width: 80%;
+}
+
+.table-cel {
+    padding: 10px;
+    border: 2px solid rgb(0, 4, 59);
+    border-radius: 5px;
+    text-align: center;
+    color: rgb(0, 5, 82);
+    font-size: 18px;
+}
+
+.tbl-hd {
+    background-color: rgb(124, 170, 255);
+    color:rgb(0, 5, 82);
+    font-size: 26px;
+}
+
+.button-status {
+    margin-left: 20px;
+    border: 2px solid rgb(0, 117, 45);
+    background: rgb(142, 207, 142);
+    padding-inline: 5px;
+    text-decoration: none;
+    border-radius: 5px;
+    color: green;
+    font-weight: bold;
+}
+
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgb(231, 231, 255);
+    box-shadow: 3px 3px 3px 2px rgba(0, 0, 0, 0.3);
+    margin: 50px 200px;
+    padding: 10px;
+}
+
+.detail-field{
+    background-color:rgb(240, 240, 253) ;
+    padding: 10px;
+    border: 1px solid rgb(211, 211, 248);
+    margin: 5px;
+    border-radius: 5px;
+}
+.details-container {
+    width:100%;
+}
+
+.button-update-container {
+    background : rgb(183, 176, 201); 
+    cursor: pointer;
+    margin: 0 auto;
+    border: 2px solid rgb(47, 55, 160);
+    border-radius: 5px;
+    text-align: center;
+    width: 150px;
+
+}
+
+.update-link {
+    margin-top: 50px;
+    font-size: 25px;
+    color: rgb(0, 0, 65);
+    font-weight: bold; /* Deixa o texto em negrito */
+    text-decoration: none;
+    padding: 15px 30px;
+}

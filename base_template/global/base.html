@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="{% static 'global/css/style.css' %}">
+</head>
+<body>
+    <header>
+        <nav>
+            <div>
+                <ul class="list-container">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url "todo:list" %}">Tasks</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'todo:create' %}">Create</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        {% include "global/partials/messages.html" %}
+        {% block content %}{% endblock content %}
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>
