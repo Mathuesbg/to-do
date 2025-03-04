@@ -16,9 +16,19 @@
                         {{field.label}}:
                     </label> 
                     {{field}}
-                    {{field.error}}
                 </div>
+                {% if field.errors %}
+                    <div class="field-errors input-container">
+                        {{field.errors}}
+                    </div>
+                {% endif %}
             {% endfor %}
+            
+            {% if form.non_field_errors %}    
+                <div class="message error ">
+                    {{form.non_field_errors}}
+                </div>
+            {% endif %}
                 
             <button class="submit-button" type="submit">Submit</button>
         </div>

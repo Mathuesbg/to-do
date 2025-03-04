@@ -11,13 +11,27 @@
     <header>
         <nav>
             <div>
-                <ul class="list-container">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url "todo:list" %}">Tasks</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'todo:create' %}">Create</a>
-                    </li>
+                <ul class="nav-container">
+                    {% if request.user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'todo:list' %}">Tasks</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'todo:create' %}">Create</a>
+                        </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'todo:logout' %}">Logout</a>
+                            
+                    {% else %}
+                        <li class="nav-item">   
+                            <a class="nav-link" href="{% url 'todo:login' %}">Login</a>
+                        </li>
+                        <li class="nav-item">   
+                            <a class="nav-link" href="{% url 'todo:register' %}">Register</a>
+                        </li>
+                    {% endif %}
+                    
                 </ul>
             </div>
         </nav>

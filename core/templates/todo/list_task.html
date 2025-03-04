@@ -3,6 +3,12 @@
 {% block content %}
 
     <h1 class="task-list-header">Tasks</h1>
+    {% if request.user.is_authenticated  %}
+        <div class="greetings-user">
+            <p>{{request.user}}'s tasks!</p>
+        </div>
+    {% endif %}
+    {% if tasks %}
     <div class="table-container">
         <table>
             <thead>
@@ -21,8 +27,11 @@
                             <a class="link-detail " href="{% url "todo:detail" task.id %}">{{task.title}}</a>
                         </td>
                         <td class="table-cel">
-                            {{task.status}} 
-                            
+                            {% if task.status == "pending" %}
+                               {{task.status}} 
+                            {% else %}
+                                <div class="finished_at">{{task.status}}</div> 
+                            {% endif %}
                         </td>                   
                         <td class="table-cel">
                             {{task.created_at}}
@@ -46,5 +55,12 @@
                 {% endfor %}
             </tbody>
         </table>
-    <div>   
+    <div>
+    {% else %}
+        <div class="no-task-container">
+            <div class="no-task-info">
+                <p>No tasks to do!</p>
+            </div>
+        </div>
+    {% endif %}   
 {% endblock content %}

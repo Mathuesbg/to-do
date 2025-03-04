@@ -1,12 +1,16 @@
 {% extends "global/base.html" %}
 
 {% block content %}
-    <form class="form-container" action="{% url "todo:update" task.id %}" method="POST">
+
+    <form class="form-container" action="{% url "todo:login" %}" method="POST">
+        
         {% csrf_token %}
-        <div class="field-container">
-            {% for field in form %}
+        <div class="field-container-register">
+            <legend class="task-list-header">Login</legend>
+            {% for field in form %} 
+                
                 <div class="input-container">
-                    <label class="label-input" for="{{field.id_for_label}}">
+                    <label class="label-input-register" for="{{field.id_for_label}}">
                         {{field.label}}:
                     </label> 
                     {{field}}
@@ -17,14 +21,15 @@
                     </div>
                 {% endif %}
             {% endfor %}
-            
             {% if form.non_field_errors %}    
                 <div class="message error ">
                     {{form.non_field_errors}}
                 </div>
             {% endif %}
-                
-            <button class="submit-button" type="submit">Submit</button>
+            <div class="input-container">  
+                <button class="submit-button-register" type="submit">Submit</button>
+            </div>  
         </div>
     </form>
+
 {% endblock content %}
