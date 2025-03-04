@@ -11,13 +11,14 @@
                     <th class="table-cel tbl-hd">Status</th>
                     <th class="table-cel tbl-hd">Created at</th>
                     <th class="table-cel tbl-hd">Fineshed at</th>
+                    <th class="table-cel tbl-hd action">Actions</th>
                 </tr>
             </thead>
             <tbody>
                 {% for task in tasks %}
                     <tr>
-                        <td class="table-cel">
-                            <a href="{% url "todo:detail" task.id %}">{{task.title}}</a>
+                        <td class="table-cel shadow">
+                            <a class="link-detail " href="{% url "todo:detail" task.id %}">{{task.title}}</a>
                         </td>
                         <td class="table-cel">
                             {{task.status}} 
@@ -34,11 +35,11 @@
                             {% endif %}
                         </td>
                         <form action=""></form>
-                        <td>
+                        <td class="table-cel">
                             {% if task.status == "pending" %}
                                 <a class="button-status" href="{% url "todo:status" task.id %}">&#10004;</a>
                             {% endif %}
-                            <a class="button-status" href="{% url "todo:delete" task.id %}">&#10008;</a>
+                            <a class="button-status del" href="{% url "todo:delete" task.id %}">&#10008;</a>
                         </td>
 
                     </tr>
