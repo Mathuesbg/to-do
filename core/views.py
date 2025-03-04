@@ -71,7 +71,7 @@ def update_task(request, id):
         if form.is_valid():
             form.save()
             messages.success(request=request, message="Task updated sucessfully")
-            return redirect('todo:create')
+            return redirect('todo:list')
     else:
         form = CreateTaskForm(instance=task)
 
